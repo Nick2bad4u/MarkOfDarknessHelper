@@ -18,8 +18,7 @@ A RuneLite plugin to help you track the Mark of Darkness spell and its effects i
 
 ## ⚙️ Configuration
 
-* Enable or disable notifications for spell expiration.
-* Choose which overlays and statistics to display.
+* ![settings](https://i.gyazo.com/2db7d2f14319f0106fc1b7aa613152c5.png)
 
 ---
 
@@ -31,7 +30,5 @@ A RuneLite plugin to help you track the Mark of Darkness spell and its effects i
 
 ## 🖼️ Example Overlay
 
-![example-overlay](https://i.gyazo.com/da50f05aa680a0cd783285bb401f6e42.mp4)
-* The overlay shows the remaining time for the Mark of Darkness spell and highlights affected monsters.
+https://github.com/user-attachments/assets/a9ae094d-1223-4d8c-9563-2225a5ef22cf
 
-![settings](https://i.gyazo.com/2db7d2f14319f0106fc1b7aa613152c5.png)
