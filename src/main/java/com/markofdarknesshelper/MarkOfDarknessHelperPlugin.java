@@ -1,4 +1,4 @@
-package net.runelite.client.plugins.markofdarknesshelper;
+package net.runelite.client.plugins.markofdarknesshelper.MarkOfDarknessHelperPlugin
 
 import com.google.inject.Provides;
 import lombok.extern.slf4j.Slf4j;

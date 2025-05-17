@@ -1,4 +1,4 @@
-package net.runelite.client.plugins.markofdarknesshelper;
+package net.runelite.client.plugins.markofdarknesshelper.MarkOfDarknessHelperPlugin;
 
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
