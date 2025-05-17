@@ -30,5 +30,4 @@ A RuneLite plugin to help you track the Mark of Darkness spell and its effects i
 
 ## 🖼️ Example Overlay
 
-https://github.com/user-attachments/assets/a9ae094d-1223-4d8c-9563-2225a5ef22cf
-
+[Example Overlay Image](https://github.com/user-attachments/assets/a9ae094d-1223-4d8c-9563-2225a5ef22cf)
