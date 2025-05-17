@@ -1,4 +1,4 @@
-package net.runelite.client.plugins.markofdarknesshelper.MarkOfDarknessHelperPlugin;
+package com.markofdarknesshelper;
 
 import java.awt.Color;
 import java.awt.Dimension;
