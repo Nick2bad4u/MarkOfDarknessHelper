@@ -24,7 +24,7 @@ public interface MarkOfDarknessHelperConfig extends Config
     @ConfigItem(
             keyName = "onlyArceuus",
             name = "Only on Arceuus Spellbook",
-            description = "Only display the reminder box when on the Arceuus spellbook"
+            description = "Only display the reminder box when on the Arceuus spellbook."
     )
     default boolean onlyArceuus() { return true; }
 }
