@@ -10,3 +10,4 @@ nbproject/
 bin/
 .clj-kondo/
 .lsp/
+.vscode/settings.json
