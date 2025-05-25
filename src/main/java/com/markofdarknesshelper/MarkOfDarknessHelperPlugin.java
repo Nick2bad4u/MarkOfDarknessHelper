@@ -69,7 +69,7 @@ public class MarkOfDarknessHelperPlugin extends Plugin
 
     private boolean isWieldingPurgingStaff()
     {
-        final int PURGING_STAFF_ID = 12345; // Replace with actual ID if known
+        final int PURGING_STAFF_ID = 29594; // Replace with actual ID if known
         ItemContainer equipment = client.getItemContainer(InventoryID.EQUIPMENT);
         if (equipment != null)
         {
