@@ -1,0 +1,33 @@
+name: Microsoft Security DevOps
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 9 * * *" # Every day at 9:23 AM UTC
+
+permissions:
+  security-events: write
+
+concurrency:
+  group: msdo-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  msdo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Run Microsoft Security DevOps
+        uses: microsoft/security-devops-action@d0736c546281e0632667b8e0046ae3d7bba0bf67 # latest
+        id: msdo
+      - name: Upload results to Security tab
+        uses: github/codeql-action/upload-sarif@ff0a06e83cb2de871e5a09832bc6a81e7276941f # v3.28.18
+        with:
+          sarif_file: ${{ steps.msdo.outputs.sarifFile }}
