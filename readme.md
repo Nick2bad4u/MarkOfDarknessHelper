@@ -4,24 +4,46 @@ A RuneLite plugin to help you track the [Mark of Darkness](https://oldschool.run
 
 ---
 
-## ✨ Features
+## ✨ Features and ⚙️ Configuration
 
-* 🕯️ **Mark of Darkness Timer** – Displays a pop-up notification when Mark of Darkness expires.
-* 🌑 **Flash the Reminder Box** - Flahes the pop-up notification with a color
-* 🔔 **Notify when Mark of Darkness expires** - Notifes you slightly early to get ready to cast the next Mark of Darkness.
-* 🪄 **Only on Arceuus Spellbook** - Only enables the plugin functionality whne using the Arceuus spellbook.
+<p>
+<img src="https://i.gyazo.com/41cf311e2d56cff2b9ac9e97a1ecbfa7.png" align="right" alt="Plugin Settings for Mark of Darkness Helper">
+</p>
+
+### Features
+- 🕯️ **Mark of Darkness Timer** – Displays a pop-up notification when Mark of Darkness expires.
+  
+- 🌑 **Flash the Reminder Box** - Flahes the pop-up notification with a color
+  
+### Configuration
+
+- 🪄 **Only on Arceuus Spellbook**  
+  Enables the plugin only when you are using the Arceuus spellbook.
+
+- 🔔 **Notify when Mark of Darkness Expires**  
+  Sends a notification when Mark of Darkness expires. (Disabling this will effectively turn off the plugin.)
+
+- **Early Notification**  
+  Sends a notification shortly before Mark of Darkness expires, allowing you to prepare for the next cast.
+
+- **Reminder Duration (seconds)**  
+  Sets how long (in seconds) the notification remains on screen after Mark of Darkness expires.
+
+- **Box Color**  
+  Sets the default color of the notification box.
+
+- **Flash the Reminder Box**  
+  Makes the notification box alternate between two colors.
+
+- **Flashing Box Color**  
+  Sets the secondary color used when the box flashes.
+  
 ---
 
 ## ℹ️ More Info
 
 * You can enable or disable each feature in the plugin configuration menu.
 * The plugin only tracks Mark of Darkness while it is active.
-
----
-
-## ⚙️ Configuration
-
-* ![settings](https://i.gyazo.com/2db7d2f14319f0106fc1b7aa613152c5.png)
 
 ---
 
