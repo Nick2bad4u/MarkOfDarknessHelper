@@ -5,6 +5,7 @@ import net.runelite.client.externalplugins.ExternalPluginManager;
 
 public class MarkOfDarknessHelperPluginTest
 {
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) throws Exception
     {
         ExternalPluginManager.loadBuiltin(MarkOfDarknessHelperPlugin.class);
