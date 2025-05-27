@@ -12,12 +12,10 @@ import net.runelite.client.ui.overlay.components.LineComponent;
 
 public class MarkOfDarknessHelperOverlay extends OverlayPanel
 {
-    private static final Color FOCUS = new Color(128, 0, 255, 150);
-
     private final MarkOfDarknessHelperConfig config;
     private final Client client;
-    private long markStartTime = 0;
-    private int timeoutSeconds = 60;
+    private boolean showReminder = false;
+    private long reminderStartTime = 0;
 
     @Inject
     public MarkOfDarknessHelperOverlay(MarkOfDarknessHelperConfig config, Client client)
@@ -26,24 +24,29 @@ public class MarkOfDarknessHelperOverlay extends OverlayPanel
         this.client = client;
     }
 
-    public void setMarkStartTime(long startTime)
-    {
-        this.markStartTime = startTime;
+    public void showReminderBox() {
+        this.showReminder = true;
+        this.reminderStartTime = System.currentTimeMillis();
     }
 
-    public void setTimeout(int seconds)
-    {
-        this.timeoutSeconds = seconds;
+    public void hideReminderBox() {
+        this.showReminder = false;
+        this.reminderStartTime = 0;
     }
 
     private boolean shouldShowReminder()
     {
-        if (markStartTime == 0)
+        if (!showReminder)
         {
-            return true;
+            return false;
         }
-        long elapsed = (System.currentTimeMillis() - markStartTime) / 1000;
-        return elapsed > timeoutSeconds;
+        if (reminderStartTime > 0 && (System.currentTimeMillis() - reminderStartTime) / 1000 > config.overlayTimeoutSeconds())
+        {
+            showReminder = false;
+            reminderStartTime = 0;
+            return false;
+        }
+        return true;
     }
 
     @Override
@@ -64,20 +67,23 @@ public class MarkOfDarknessHelperOverlay extends OverlayPanel
                 .left("Cast Mark of Darkness!")
                 .build());
 
+        Color userFlashColor = config.flashColor();
+        Color userBoxColor = config.boxColor();
+
         if (config.shouldFlash())
         {
             if (client.getGameCycle() % 40 >= 20)
             {
-                panelComponent.setBackgroundColor(getPreferredColor());
+                panelComponent.setBackgroundColor(userBoxColor);
             }
             else
             {
-                panelComponent.setBackgroundColor(FOCUS);
+                panelComponent.setBackgroundColor(userFlashColor);
             }
         }
         else
         {
-            panelComponent.setBackgroundColor(FOCUS);
+            panelComponent.setBackgroundColor(userBoxColor);
         }
 
         setPosition(OverlayPosition.ABOVE_CHATBOX_RIGHT);

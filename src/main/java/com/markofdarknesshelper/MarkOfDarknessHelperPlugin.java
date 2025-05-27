@@ -2,10 +2,8 @@ package com.markofdarknesshelper;
 
 import com.google.inject.Provides;
 import lombok.extern.slf4j.Slf4j;
-import net.runelite.api.*;
 import net.runelite.api.events.ChatMessage;
 import net.runelite.api.ChatMessageType;
-import net.runelite.client.Notifier;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.plugins.Plugin;
@@ -20,11 +18,6 @@ import javax.inject.Inject;
 )
 public class MarkOfDarknessHelperPlugin extends Plugin
 {
-    @Inject
-    private Client client;
-
-    @Inject
-    private Notifier notifier;
 
     @Inject
     private MarkOfDarknessHelperOverlay overlay;
@@ -36,6 +29,8 @@ public class MarkOfDarknessHelperPlugin extends Plugin
     private OverlayManager overlayManager;
 
     private static final String MARK_OF_DARKNESS_MESSAGE = "You have placed a Mark of Darkness upon yourself.</col>";
+    private static final String MARK_OF_DARKNESS_EARLY_MESSAGE = "Your Mark of Darkness is about to run out.";
+    private static final String MARK_OF_DARKNESS_EXPIRED_MESSAGE = "Your Mark of Darkness has faded away.";
 
     @Override
     protected void startUp() throws Exception
@@ -59,30 +54,34 @@ public class MarkOfDarknessHelperPlugin extends Plugin
 
         if (event.getMessage().endsWith(MARK_OF_DARKNESS_MESSAGE))
         {
-            int magicLevel = client.getBoostedSkillLevel(Skill.MAGIC);
-            boolean hasPurgingStaff = isWieldingPurgingStaff();
-            int dynamicTimeout = (int) Math.round(0.6 * magicLevel * (hasPurgingStaff ? 5 : 1));
-            overlay.setMarkStartTime(System.currentTimeMillis());
-            overlay.setTimeout(dynamicTimeout);
+            overlay.hideReminderBox();
+        }
+        else if (config.earlyNotify() && event.getMessage().contains(MARK_OF_DARKNESS_EARLY_MESSAGE))
+        {
+            overlay.showReminderBox();
+        }
+        else if (event.getMessage().contains(MARK_OF_DARKNESS_EXPIRED_MESSAGE))
+        {
+            overlay.showReminderBox();
         }
     }
 
-    private boolean isWieldingPurgingStaff()
-    {
-        final int PURGING_STAFF_ID = 29594; // Replace with actual ID if known
-        ItemContainer equipment = client.getItemContainer(InventoryID.EQUIPMENT);
-        if (equipment != null)
-        {
-            for (Item item : equipment.getItems())
-            {
-                if (item != null && item.getId() == PURGING_STAFF_ID)
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+    // private boolean isWieldingPurgingStaff()
+    // {
+    //     final int PURGING_STAFF_ID = 29594; // Replace with actual ID if known
+    //     ItemContainer equipment = client.getItemContainer(InventoryID.EQUIPMENT);
+    //     if (equipment != null)
+    //     {
+    //         for (Item item : equipment.getItems())
+    //         {
+    //             if (item != null && item.getId() == PURGING_STAFF_ID)
+    //             {
+    //                 return true;
+    //             }
+    //         }
+    //     }
+    //     return false;
+    // }
 
     @Provides
     MarkOfDarknessHelperConfig provideConfig(ConfigManager configManager)
