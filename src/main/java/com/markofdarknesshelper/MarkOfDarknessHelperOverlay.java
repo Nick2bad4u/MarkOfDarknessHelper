@@ -5,10 +5,11 @@ import java.awt.Dimension;
 import java.awt.Graphics2D;
 import javax.inject.Inject;
 import net.runelite.api.Client;
-import net.runelite.api.Varbits;
+import net.runelite.api.gameval.VarbitID;
 import net.runelite.client.ui.overlay.OverlayPanel;
 import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.components.LineComponent;
+
 
 public class MarkOfDarknessHelperOverlay extends OverlayPanel
 {
@@ -52,7 +53,7 @@ public class MarkOfDarknessHelperOverlay extends OverlayPanel
     @Override
     public Dimension render(Graphics2D graphics)
     {
-        if (config.onlyArceuus() && client.getVarbitValue(Varbits.SPELLBOOK) != 3)
+        if (config.onlyArceuus() && client.getVarbitValue(VarbitID.SPELLBOOK) != 3)
         {
             return null;
         }
