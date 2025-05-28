@@ -11,10 +11,11 @@ A RuneLite plugin to help you track the [Mark of Darkness](https://oldschool.run
 </p>
 
 ### Features
+
 - 🕯️ **Mark of Darkness Timer** – Displays a pop-up notification when Mark of Darkness expires.
-  
-- 🌑 **Flash the Reminder Box** - Flahes the pop-up notification with a color
-  
+
+- 🌑 **Flash the Reminder Box** - Flashes the pop-up notification with a color
+
 ### Configuration
 
 - 🪄 **Only on Arceuus Spellbook**  
@@ -42,14 +43,14 @@ A RuneLite plugin to help you track the [Mark of Darkness](https://oldschool.run
 
 ## ℹ️ More Info
 
-* You can enable or disable each feature in the plugin configuration menu.
-* The plugin only tracks Mark of Darkness while it is active.
+- You can enable or disable each feature in the plugin configuration menu.
+- The plugin only tracks Mark of Darkness while it is active.
 
 ---
 
 ## 🔄 Compatibility
 
-* This plugin is designed to work alongside other RuneLite plugins and does not interfere with standard gameplay.
+- This plugin is designed to work alongside other RuneLite plugins and does not interfere with standard gameplay.
 
 ---
 
@@ -77,6 +78,9 @@ A RuneLite plugin to help you track the [Mark of Darkness](https://oldschool.run
 	offering at-a-glance insight into the project's health checks and automation processes.
 -->
 ## 🖼️ Github / Repo Stats
+
+[![Repo Views](https://hits.sh/github.com/Nick2bad4u/MarkOfDarknessHelper.svg?label=Repo%20Views&extraCount=150&color=8400ca&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V%2B0%2FAAAAG1BMVEUAAABYA6%2BQMP9FDWIqEVAElp0Gwagb%2BLcAAAHuSo5WAAAAAXRSTlMAQObYZgAAAHJJREFUeNplkUESwyAMxNZeN%2Bj%2FL%2B7UDEkKe5NGF7DugY4BnDLMGYbhDKvYw3TVlpJ2bSlTGrbQZZst7MFbZka%2BJCDSEbYL0Z4PgvzJgsYp1bIKLXmhTqvgxgvWMxcyrtEQHU6EAZKIQloIPJ%2F84P85kL7ubgSOWtD%2BhwAAAABJRU5ErkJggg%3D%3D)](https://hits.sh/github.com/Nick2bad4u/MarkOfDarknessHelper/)
+[![Repo Views Today](https://hits.sh/github.com/Nick2bad4u/MarkOfDarknessHelper.svg?view=today-total&label=Repo%20Views%20Today&extraCount=149&color=8400ca&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V%2B0%2FAAAAG1BMVEUAAABYA6%2BQMP9FDWIqEVAElp0Gwagb%2BLcAAAHuSo5WAAAAAXRSTlMAQObYZgAAAHJJREFUeNplkUESwyAMxNZeN%2Bj%2FL%2B7UDEkKe5NGF7DugY4BnDLMGYbhDKvYw3TVlpJ2bSlTGrbQZZst7MFbZka%2BJCDSEbYL0Z4PgvzJgsYp1bIKLXmhTqvgxgvWMxcyrtEQHU6EAZKIQloIPJ%2F84P85kL7ubgSOWtD%2BhwAAAABJRU5ErkJggg%3D%3D)](https://hits.sh/github.com/Nick2bad4u/MarkOfDarknessHelper/)
 [![ActionLint](https://github.com/Nick2bad4u/MarkOfDarknessHelper/actions/workflows/ActionLint.yml/badge.svg)](https://github.com/Nick2bad4u/MarkOfDarknessHelper/actions/workflows/ActionLint.yml) 🧹
 [![Automatic Rebase](https://github.com/Nick2bad4u/MarkOfDarknessHelper/actions/workflows/rebase.yml/badge.svg)](https://github.com/Nick2bad4u/MarkOfDarknessHelper/actions/workflows/rebase.yml) 🔄
 [![CodeQL Security Scan](https://github.com/Nick2bad4u/MarkOfDarknessHelper/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/Nick2bad4u/MarkOfDarknessHelper/actions/workflows/github-code-scanning/codeql) 🛡️
