@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write
-      contents: read
+      contents: write
+      models: write
     concurrency:
       group: summary-${{ github.ref }}
       cancel-in-progress: false
