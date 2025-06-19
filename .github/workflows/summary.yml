@@ -5,6 +5,9 @@ on:
     types: [opened]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   summary:
     runs-on: ubuntu-latest
