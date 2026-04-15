@@ -17,6 +17,7 @@ public class MarkOfDarknessHelperOverlay extends OverlayPanel
     private final Client client;
     private boolean showReminder = false;
     private long reminderStartTime = 0;
+    private boolean isMarkActive = false;
 
     @Inject
     public MarkOfDarknessHelperOverlay(MarkOfDarknessHelperConfig config, Client client)
@@ -25,14 +26,30 @@ public class MarkOfDarknessHelperOverlay extends OverlayPanel
         this.client = client;
     }
 
-    public void showReminderBox() {
+    public void showReminderBox()
+    {
         this.showReminder = true;
         this.reminderStartTime = System.currentTimeMillis();
+        this.isMarkActive = false;
     }
 
-    public void hideReminderBox() {
+    public void hideReminderBox()
+    {
         this.showReminder = false;
         this.reminderStartTime = 0;
+        this.isMarkActive = true;
+    }
+
+    /**
+     * Called when the local player dies. If Mark of Darkness was active,
+     * the buff is lost on death so we immediately show the recast reminder.
+     */
+    public void resetOnDeath()
+    {
+        if (isMarkActive)
+        {
+            showReminderBox();
+        }
     }
 
     private boolean shouldShowReminder()

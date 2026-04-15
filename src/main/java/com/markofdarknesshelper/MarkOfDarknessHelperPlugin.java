@@ -2,6 +2,8 @@ package com.markofdarknesshelper;
 
 import com.google.inject.Provides;
 import lombok.extern.slf4j.Slf4j;
+import net.runelite.api.Client;
+import net.runelite.api.events.ActorDeath;
 import net.runelite.api.events.ChatMessage;
 import net.runelite.api.ChatMessageType;
 import net.runelite.client.config.ConfigManager;
@@ -28,6 +30,9 @@ public class MarkOfDarknessHelperPlugin extends Plugin
     @Inject
     private OverlayManager overlayManager;
 
+    @Inject
+    private Client client;
+
     private static final String MARK_OF_DARKNESS_MESSAGE = "You have placed a Mark of Darkness upon yourself.</col>";
     private static final String MARK_OF_DARKNESS_EARLY_MESSAGE = "Your Mark of Darkness is about to run out.";
     private static final String MARK_OF_DARKNESS_EXPIRED_MESSAGE = "Your Mark of Darkness has faded away.";
@@ -42,6 +47,15 @@ public class MarkOfDarknessHelperPlugin extends Plugin
     protected void shutDown() throws Exception
     {
         overlayManager.remove(overlay);
+    }
+
+    @Subscribe
+    public void onActorDeath(ActorDeath actorDeath)
+    {
+        if (actorDeath.getActor() == client.getLocalPlayer())
+        {
+            overlay.resetOnDeath();
+        }
     }
 
     @Subscribe
