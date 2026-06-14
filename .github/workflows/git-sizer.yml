@@ -19,7 +19,7 @@ jobs:
 
       - name: Run git-sizer
         id: sizer
-        uses: ChrisCarini/github-git-sizer-action@09eaa4ae73038a5f0bbdc7e7b964f1bf6114c277 # latest
+        uses: ChrisCarini/github-git-sizer-action@0a851f864e48e0a46c228a3626bb32eb21bb270a # v0.0.1
         with:
           flags: '--threshold=0'
 
